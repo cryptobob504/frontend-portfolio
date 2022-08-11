@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h2 {
+    @apply text-3xl font-bold text-primaryc mb-5;
+  }
+}
+
+button {
+  @apply text-lg bg-opacity-0 hover:bg-primaryc text-primaryc font-semibold hover:text-white py-2 px-4 border border-x-primaryc rounded;
+}
+
+h1 {
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: 600;
+}
+
+section {
+  @apply my-32;
+}
+main {
+  padding: 0px 100px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
