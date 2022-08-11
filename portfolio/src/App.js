@@ -1,7 +1,9 @@
 import './App.css';
 import Nav from './Components/Header';
 import React from 'react';
-import TabSelector from './Components/TabSelector';
+import TabSelectorEducation from './Components/TabSelector_Education';
+import TabSelectorCareer from './Components/TabSelector_Career';
+import { educationData, careerData } from './Utils/data';
 
 function App() {
   return (
@@ -65,41 +67,10 @@ function App() {
           </div>
         </section>
         <section id="career">
-          <TabSelector />
+          <TabSelectorCareer info={careerData} />
         </section>
         <section id="education">
-          <h2>Education</h2>
-          <div className="flex flex-row gap-20">
-            <ul className="flex flex-col text-white gap-8">
-              <li>University Of New Orleans</li>
-              <li>Udacity Nanodegree</li>
-              <li>CUNA Management School</li>
-              <li>Udacity Nanodegree</li>
-            </ul>
-            <div className="text-white">
-              <h2>University Of New Orleans</h2>
-              <p>May 2016 - Present</p>
-              &nbsp;
-              <ul>
-                <li>
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt mollit anim id est laborum.
-                </li>
-                <li>
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt mollit anim id est laborum.
-                </li>
-                <li>
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt mollit anim id est laborum.
-                </li>
-                <li>
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt mollit anim id est laborum.
-                </li>
-              </ul>
-            </div>
-          </div>
+          <TabSelectorEducation info={educationData} />
         </section>
         <section id="projects" className="text-white">
           <h2>Featured Projects</h2>
