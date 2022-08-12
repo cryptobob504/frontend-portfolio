@@ -16,7 +16,6 @@ export default function TabSelectorCareer({ info }) {
   //console.log(data);
   return (
     <>
-      <h2>My Career</h2>
       <div className="flex flex-row gap-20">
         <ul className="flex flex-col text-white gap-8">
           {data.map((job, index) => (
@@ -35,6 +34,7 @@ export default function TabSelectorCareer({ info }) {
         </ul>
         <div className="text-white">
           <h2>{data[selected].position}</h2>
+          <h3>{data[selected].company}</h3>
           <p>{data[selected].date}</p>
           &nbsp;
           <ul className="gap-10">

@@ -1,6 +1,7 @@
 export const careerData = [
   {
     position: 'President/CEO',
+    company: 'Fleur De Lis Federal Credit Union',
     date: 'May 2016 - Present',
     accomplishments: [
       {
@@ -23,6 +24,7 @@ export const careerData = [
   },
   {
     position: 'Owner/Operator',
+    company: 'Ecom Empire LLC',
     date: 'December 2020 - March 2021',
     accomplishments: [
       {
@@ -45,6 +47,7 @@ export const careerData = [
   },
   {
     position: "Operation's Manager",
+    company: 'Fleur De Lis Federal Credit Union',
     date: 'May 2016 - Present',
     accomplishments: [
       {
@@ -67,6 +70,7 @@ export const careerData = [
   },
   {
     position: 'IT Manager',
+    company: 'Fleur De Lis Federal Credit Union',
     date: 'May 2016 - Present',
     accomplishments: [
       {
@@ -89,6 +93,7 @@ export const careerData = [
   },
   {
     position: 'Member Service Rep',
+    company: 'Fleur De Lis Federal Credit Union',
     date: 'May 2016 - Present',
     accomplishments: [
       {
@@ -111,6 +116,7 @@ export const careerData = [
   },
   {
     position: 'Temp Office Assistant',
+    company: 'Fleur De Lis Federal Credit Union',
     date: 'May 2016 - Present',
     accomplishments: [
       {
@@ -147,7 +153,7 @@ export const educationData = [
       'Excepteur sin occeaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
-    name: 'Southeast Regional CUNA Management School',
+    name: 'SRCUS',
     date: 'May 2016 - Present',
     description:
       'Excepteur sin occeaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',

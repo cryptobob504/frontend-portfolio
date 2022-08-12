@@ -18,7 +18,7 @@ export default function TabSelectorEducation({ info }) {
     <>
       <h2>My Education</h2>
       <div className="flex flex-row gap-20">
-        <ul className="flex flex-col text-white gap-8">
+        <ul className="flex flex-col text-white gap-5">
           {data.map((school, index) => (
             <li
               className={
