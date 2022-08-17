@@ -1,13 +1,32 @@
 import './App.css';
 import Nav from './Components/Header';
-import React from 'react';
 import TabSelectorEducation from './Components/TabSelector_Education';
 import TabSelectorCareer from './Components/TabSelector_Career';
-import { educationData, careerData } from './Utils/data';
-import CardGrid from './Components/CardGrid';
-import pfp from './bob.jpg';
+
+import resume from './Robert_Mayfield_Resume_2.PDF';
+import TabsProjects from './Components/Tabs_Projects';
+import Featured from './Components/Featured';
+import About from './Components/About';
 
 function App() {
+  function reveal() {
+    var reveals = document.querySelectorAll('.reveal');
+
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 150;
+
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add('active');
+      } else {
+        reveals[i].classList.remove('active');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', reveal);
+
   return (
     <>
       <Nav />
@@ -15,129 +34,54 @@ function App() {
         <section id="home">
           <p className="text-base text-white">Hi, my name is</p>
           <h1 className="text-primaryc">Robert Mayfield.</h1>
-          <h1 className="text-secondaryc">I build things for the web.</h1>
+          <h1 className="text-secondaryc">
+            I'm a Full Stack Blockchain Developer.
+          </h1>
           <p className="text-base text-white max-w-4xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            I'm a professional and software engineer with a passion for
+            blockchain, cryptocurrency, NFT, and decentralized technologies.
+            Scroll below to read more about my experience and career.
           </p>
           &nbsp;
-          <button className="text-primaryc mt-5">View My Resume</button>
+          <button className="text-primaryc mt-5">
+            <a href="#about">About Me</a>
+          </button>
         </section>
-        <section id="about">
-          <div className="flex flex-row justify-around">
-            <div className="flex flex-col gap-5">
-              <h2>About Me</h2>
-              <div className="max-w-2xl">
-                <p className="text-white">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur
-                </p>
-                <p className="text-white">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur
-                </p>
-                <p className="text-white">
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt mollit anim id est laborum.
-                </p>
-              </div>
-              <div className="flex flex-col gap-20">
-                <div className="flex flex-row gap-20">
-                  <ul className="list-disc marker:text-secondaryc text-white">
-                    <li>Javascript</li>
-                    <li>React</li>
-                    <li>Node.js</li>
-                  </ul>
-                  <ul className="list-disc marker:text-secondaryc text-white">
-                    <li>Express.js</li>
-                    <li>Solidity</li>
-                    <li>MongoDB</li>
-                  </ul>
-                  <ul className="list-disc marker:text-secondaryc text-white">
-                    <li>Leadership</li>
-                    <li>Strategic Planning</li>
-                    <li>Communication</li>
-                  </ul>
-                  <ul className="list-disc marker:text-secondaryc text-white">
-                    <li>Budgeting</li>
-                    <li>Entrepreneurship</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <img
-              className="self-center p-1 border bg-bgcolor border-secondaryc rounded max-w-full"
-              width="300"
-              height="200"
-              src={pfp}
-              alt="robert"
-            />
-          </div>
+        <section id="about" className="reveal">
+          <About />
         </section>
 
-        <section id="career">
+        <section id="career" className="reveal">
           <h2>My Career</h2>
           <hr className="text-secondaryc mb-5 max-w-2xl"></hr>
-          <TabSelectorCareer info={careerData} />
+          <TabSelectorCareer />
+
+          <button className="mt-8">
+            <a href={resume} download="RobertMayfield_Resume">
+              Resume
+            </a>
+          </button>
         </section>
-        <section id="education">
-          <TabSelectorEducation info={educationData} />
+        <section id="education" className="reveal">
+          <TabSelectorEducation />
         </section>
-        <section id="projects" className="text-white">
-          <h2 className="mb-10">Featured Projects</h2>
-          <div className="flex flex-row justify-around text-white">
-            <div>
-              <img src="https://via.placeholder.com/350x150" alt="Bobby" />
-            </div>
-            <div className="text-white flex flex-col items-end">
-              <h2>My Project</h2>
-              <div className="text-secondaryc border border-solid bg-dark border-secondaryc max-w-md">
-                <p>
-                  A minimal, dark blue theme A minimal, dark blue theme for VS
-                  Code, Sublime Text, Atom, iTerm, and more. Available on Visual
-                  Studio Marketplace, Package Control, Atom Package Manager, and
-                  npm.
-                </p>
-              </div>
-              <ul className="flex flex-row gap-5 justify-end">
-                <li>VS Code</li>
-                <li>Sublime Text</li>
-                <li>Atom</li>
-                <li>Test</li>
-                <li>Hyper</li>
-              </ul>
-              <ul className="flex flex-row gap-5 justify-end">
-                <li>Github Link</li>
-                <li>Project Link</li>
-              </ul>
-            </div>
-          </div>
+        <section id="projects" className="text-white reveal">
+          <Featured />
         </section>
-        <section id="proj_other">
-          <h2>Other Projects</h2>
-          <CardGrid />
+        <section id="proj_other" className="reveal">
+          <h2 className="text-center">Other Projects</h2>
+          <TabsProjects />
         </section>
-        <section id="contact" className="text-white">
+        <section id="contact" className="text-white reveal">
           <div className="flex flex-col justify-center items-center gap-5">
             <h2>Get In Touch</h2>
             <p>
               Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
               officia deserunt mollit anim id est laborum.
             </p>
-            <button>Contact Me</button>
+            <button>
+              <a href="mailto:bjm2020@gmail.com">Contact Me</a>
+            </button>
           </div>
         </section>
       </main>

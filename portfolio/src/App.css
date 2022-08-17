@@ -11,6 +11,22 @@
   }
 }
 
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+p {
+  @apply mb-4;
+}
+
 button {
   @apply text-lg bg-opacity-0 hover:bg-primaryc text-primaryc font-semibold hover:text-white py-2 px-4 border border-x-primaryc rounded;
 }
@@ -25,6 +41,10 @@ section {
 }
 main {
   padding: 0px 100px;
+}
+
+header ul li {
+  @apply hover:text-primaryc;
 }
 
 @media (prefers-reduced-motion: no-preference) {
